@@ -1,27 +1,14 @@
 package web.config;
 
-import com.mysql.cj.jdbc.MysqlDataSource;
-import org.hibernate.cfg.AvailableSettings;
-import org.hibernate.jpa.HibernatePersistenceProvider;
-import org.hibernate.mapping.Property;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
-import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
-import org.springframework.instrument.classloading.ReflectiveLoadTimeWeaver;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
-import javax.persistence.Entity;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Objects;
 import java.util.Properties;
@@ -32,10 +19,7 @@ import java.util.Properties;
 @PropertySource("classpath:db.properties")
 public class HibernateConfig {
 
-//    static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
-//    static final String DB_USER_NAME = "root";
-//    static final String DB_PASSWORD = "rootroot";
-//    static final String dbConnectionURL = "jdbc:mysql://localhost:3306/new_schema1";
+
     private final Environment env;
 
     public HibernateConfig(Environment env) {
