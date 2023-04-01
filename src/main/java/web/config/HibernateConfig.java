@@ -74,15 +74,10 @@ public class HibernateConfig {
         return transactionManager;
     }
 
-    @Bean
-    public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
-        return new PersistenceExceptionTranslationPostProcessor();
-    }
-
     Properties additionalProperties() {
         Properties properties = new Properties();
         properties.put("hibernate.show_sql", env.getProperty("db.show_sql"));
-        properties.put("hibernate.hbm2ddl.auto", env.getProperty("db.hbm2ddl.none"));
+        properties.put("hibernate.hbm2ddl.auto", env.getProperty("db.hbm2ddl.auto"));
         properties.put("hibernate.dialect", env.getProperty("db.dialect"));
 
         return properties;
