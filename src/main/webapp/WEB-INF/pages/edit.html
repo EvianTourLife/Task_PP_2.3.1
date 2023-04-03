@@ -7,18 +7,18 @@
 </head>
 <body>
 <form th:method="POST" th:action="@{/edit(id=${user.getId()})}" th:object="${user}" th:align="center">
-  <div>
-    <label for="name">Enter new name</label>
-    <input name="name" th:field="*{name}" id="name"/>
-    <br/>
-    <label for="surname">Enter new surname</label>
-    <input name="surname" th:field="*{surname}" id="surname"/>
-    <br>
-    <label for="age">Enter new age</label>
-    <input name="age" th:field="*{age}" id="age"/>
-    <br>
-    <input type="submit" value="Update" th:align="center">
-  </div>
+    <div>
+        <label for="name">Enter new name</label>
+        <input name="name" th:field="*{name}" id="name"/>
+        <br/>
+        <label for="surname">Enter new surname</label>
+        <input name="surname" th:field="*{surname}" id="surname"/>
+        <br>
+        <label for="age">Enter new age</label>
+        <input name="age" th:field="*{age}" id="age"/>
+        <br>
+        <input type="submit" value="Update" th:align="center">
+    </div>
 </form>
 </body>
 </html>

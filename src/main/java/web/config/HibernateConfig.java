@@ -9,6 +9,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
 import javax.sql.DataSource;
 import java.util.Objects;
 import java.util.Properties;
@@ -42,7 +43,6 @@ public class HibernateConfig {
                 = new LocalContainerEntityManagerFactoryBean();
         factoryBean.setDataSource(getDataSource());
         factoryBean.setPackagesToScan("web.model");
-
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         factoryBean.setJpaVendorAdapter(vendorAdapter);
         factoryBean.setJpaProperties(additionalProperties());
@@ -68,5 +68,3 @@ public class HibernateConfig {
     }
 
 }
-
-
