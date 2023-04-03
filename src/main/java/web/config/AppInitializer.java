@@ -34,12 +34,8 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
         encodingFilter.setInitParameter("forceEncoding", "true");
         encodingFilter.addMappingForUrlPatterns(null, true, "/*");
         super.onStartup(aServletContext);
-        registerHiddenFieldFilter(aServletContext);
     }
-    private void registerHiddenFieldFilter(ServletContext aContext){
-        aContext.addFilter("hiddenHttpMethodFilter",
-                new HiddenHttpMethodFilter()).addMappingForUrlPatterns(null,true,"/*");
-    }
+
 
     @Override
     protected Filter[] getServletFilters() {
